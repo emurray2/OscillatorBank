@@ -1,9 +1,4 @@
-//
-//  Tests_macOSLaunchTests.swift
-//  Tests macOS
-//
-//  Created by Aura Audio on 5/21/22.
-//
+// Copyright AudioKit. All Rights Reserved. Revision History at http://github.com/AudioKit/AudioKit/
 
 import XCTest
 
