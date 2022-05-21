@@ -99,7 +99,7 @@
 		60148B862839369400B21DBC /* OscillatorBankApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OscillatorBankApp.swift; sourceTree = "<group>"; };
 		60148B872839369400B21DBC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		60148B882839369500B21DBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		60148B8D2839369500B21DBC /* OscillatorBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OscillatorBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		60148B8D2839369500B21DBC /* Oscillator Bank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Oscillator Bank.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60148B932839369500B21DBC /* OscillatorBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OscillatorBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60148B952839369500B21DBC /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		60148B9A2839369500B21DBC /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -211,7 +211,7 @@
 		60148B8E2839369500B21DBC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				60148B8D2839369500B21DBC /* OscillatorBank.app */,
+				60148B8D2839369500B21DBC /* Oscillator Bank.app */,
 				60148B932839369500B21DBC /* OscillatorBank.app */,
 				60148B9A2839369500B21DBC /* Tests iOS.xctest */,
 				60148BA62839369500B21DBC /* Tests macOS.xctest */,
@@ -371,7 +371,7 @@
 			);
 			name = "OscillatorBank (iOS)";
 			productName = "OscillatorBank (iOS)";
-			productReference = 60148B8D2839369500B21DBC /* OscillatorBank.app */;
+			productReference = 60148B8D2839369500B21DBC /* Oscillator Bank.app */;
 			productType = "com.apple.product-type.application";
 		};
 		60148B922839369500B21DBC /* OscillatorBank (macOS) */ = {
@@ -811,7 +811,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.auraaudio.OscillatorBank;
-				PRODUCT_NAME = OscillatorBank;
+				PRODUCT_NAME = "Oscillator Bank";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -842,7 +842,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.auraaudio.OscillatorBank;
-				PRODUCT_NAME = OscillatorBank;
+				PRODUCT_NAME = "Oscillator Bank";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1054,7 +1054,7 @@
 				DEVELOPMENT_TEAM = 6CV59M265C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "OscillatorBank-AU-iOS/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "OscillatorBank-AU-iOS";
+				INFOPLIST_KEY_CFBundleDisplayName = "Oscillator Bank";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1082,7 +1082,7 @@
 				DEVELOPMENT_TEAM = 6CV59M265C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "OscillatorBank-AU-iOS/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "OscillatorBank-AU-iOS";
+				INFOPLIST_KEY_CFBundleDisplayName = "Oscillator Bank";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
