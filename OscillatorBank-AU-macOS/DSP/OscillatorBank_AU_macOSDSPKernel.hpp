@@ -24,6 +24,7 @@ public:
     void init(int channelCount, double inSampleRate) {
         chanCount = channelCount;
         sampleRate = float(inSampleRate);
+        phaseIncrement = (twoPi / sampleRate) * frequency;
         waveform.resize(4096);
         setupWaveform();
     }
@@ -85,19 +86,33 @@ public:
             }
             return;
         }
-        
+
+        std::vector<float> oscillator;
+        oscillator.resize(frameCount);
+
+        for (int frameIndex = 0; frameIndex < frameCount; ++frameIndex) {
+            const int frameOffset = int(frameIndex + bufferOffset);
+            const int index = currentPhase / twoPi * waveform.size();
+            const float value = waveform[index] * amplitude;
+            currentPhase += phaseIncrement;
+            if (currentPhase >= twoPi)
+                currentPhase -= twoPi;
+            if (currentPhase < 0.0)
+                currentPhase += twoPi;
+            oscillator[frameOffset] = value;
+        }
+
         // Perform per sample dsp on the incoming float *in before assigning it to *out
         for (int channel = 0; channel < chanCount; ++channel) {
         
             // Get pointer to immutable input buffer and mutable output buffer
-            const float* in = (float*)inBufferListPtr->mBuffers[channel].mData;
             float* out = (float*)outBufferListPtr->mBuffers[channel].mData;
             
             for (int frameIndex = 0; frameIndex < frameCount; ++frameIndex) {
                 const int frameOffset = int(frameIndex + bufferOffset);
                 
                 // Do your sample by sample dsp here...
-                out[frameOffset] = in[frameOffset];
+                out[frameOffset] = oscillator[frameOffset];
             }
         }
     }
@@ -108,6 +123,10 @@ private:
     int chanCount = 0;
     float sampleRate = 44100.0;
     const float twoPi = 2.0 * M_PI;
+    const float frequency = 440.0;
+    const float amplitude = 0.5;
+    float currentPhase = 0.0;
+    float phaseIncrement = 0.0;
     std::vector<float> waveform;
     bool bypassed = false;
     AudioBufferList* inBufferListPtr = nullptr;
