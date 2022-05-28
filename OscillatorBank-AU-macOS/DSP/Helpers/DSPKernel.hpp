@@ -5,6 +5,7 @@
 
 #import <AudioToolbox/AudioToolbox.h>
 #import <algorithm>
+#import <vector>
 
 // Put your DSP code into a subclass of DSPKernel.
 class DSPKernel {

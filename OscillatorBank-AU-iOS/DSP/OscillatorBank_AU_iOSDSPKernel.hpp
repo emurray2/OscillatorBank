@@ -24,6 +24,8 @@ public:
     void init(int channelCount, double inSampleRate) {
         chanCount = channelCount;
         sampleRate = float(inSampleRate);
+        waveform.resize(4096);
+        setupWaveform();
     }
 
     void reset() {
@@ -58,6 +60,12 @@ public:
     void setBuffers(AudioBufferList* inBufferList, AudioBufferList* outBufferList) {
         inBufferListPtr = inBufferList;
         outBufferListPtr = outBufferList;
+    }
+
+    void setupWaveform() {
+        for (int i = 0; i < waveform.size(); ++i) {
+            waveform[i] = sin(twoPi * i / waveform.size());
+        }
     }
 
     void process(AUAudioFrameCount frameCount, AUAudioFrameCount bufferOffset) override {
@@ -99,6 +107,8 @@ public:
 private:
     int chanCount = 0;
     float sampleRate = 44100.0;
+    const float twoPi = 2.0 * M_PI;
+    std::vector<float> waveform;
     bool bypassed = false;
     AudioBufferList* inBufferListPtr = nullptr;
     AudioBufferList* outBufferListPtr = nullptr;
