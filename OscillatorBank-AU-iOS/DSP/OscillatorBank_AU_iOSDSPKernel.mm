@@ -10,28 +10,23 @@
 @implementation OscillatorBank_AU_iOSDSPKernelAdapter {
     // C++ members need to be ivars; they would be copied on access if they were properties.
     OscillatorBank_AU_iOSDSPKernel  _kernel;
-    BufferedInputBus _inputBus;
+    BufferedOutputBus _outputBusBuffer;
 }
 
 - (instancetype)init {
 
     if (self = [super init]) {
-        AVAudioFormat *format = [[AVAudioFormat alloc] initStandardFormatWithSampleRate:44100 channels:2];
-        
+        AVAudioFormat *defaultFormat = [[AVAudioFormat alloc] initStandardFormatWithSampleRate:44100. channels:2];
         // Create a DSP kernel to handle the signal processing.
-        _kernel.init(format.channelCount, format.sampleRate);
+        _kernel.init(defaultFormat.channelCount, defaultFormat.sampleRate);
         _kernel.setParameter(paramOne, 0);
 
         // Create the input and output busses.
-        _inputBus.init(format, 8);
-        _outputBus = [[AUAudioUnitBus alloc] initWithFormat:format error:nil];
-        _outputBus.maximumChannelCount = 8;
+        // Create the output bus.
+        _outputBusBuffer.init(defaultFormat, 2);
+        _outputBus = _outputBusBuffer.bus;
     }
     return self;
-}
-
-- (AUAudioUnitBus *)inputBus {
-    return _inputBus.bus;
 }
 
 - (void)setParameter:(AUParameter *)parameter value:(AUValue)value {
@@ -59,13 +54,13 @@
 }
 
 - (void)allocateRenderResources {
-    _inputBus.allocateRenderResources(self.maximumFramesToRender);
+    _outputBusBuffer.allocateRenderResources(self.maximumFramesToRender);
     _kernel.init(self.outputBus.format.channelCount, self.outputBus.format.sampleRate);
     _kernel.reset();
 }
 
 - (void)deallocateRenderResources {
-    _inputBus.deallocateRenderResources();
+    _outputBusBuffer.deallocateRenderResources();
 }
 
 // MARK: -  AUAudioUnit (AUAudioUnitImplementation)
@@ -78,7 +73,7 @@
      */
     // Specify captured objects are mutable.
     __block OscillatorBank_AU_iOSDSPKernel *state = &_kernel;
-    __block BufferedInputBus *input = &_inputBus;
+    __block BufferedOutputBus *outputBusBuffer = &_outputBusBuffer;
 
     return ^AUAudioUnitStatus(AudioUnitRenderActionFlags 				*actionFlags,
                               const AudioTimeStamp       				*timestamp,
@@ -88,17 +83,17 @@
                               const AURenderEvent        				*realtimeEventListHead,
                               AURenderPullInputBlock __unsafe_unretained pullInputBlock) {
 
-        AudioUnitRenderActionFlags pullFlags = 0;
-
-        if (frameCount > state->maximumFramesToRender()) {
-            return kAudioUnitErr_TooManyFramesToProcess;
-        }
-
-        AUAudioUnitStatus err = input->pullInput(&pullFlags, timestamp, frameCount, 0, pullInputBlock);
-
-        if (err != noErr) { return err; }
-
-        AudioBufferList *inAudioBufferList = input->mutableAudioBufferList;
+//        AudioUnitRenderActionFlags pullFlags = 0;
+//
+//        if (frameCount > state->maximumFramesToRender()) {
+//            return kAudioUnitErr_TooManyFramesToProcess;
+//        }
+//
+//        AUAudioUnitStatus err = input->pullInput(&pullFlags, timestamp, frameCount, 0, pullInputBlock);
+//
+//        if (err != noErr) { return err; }
+//
+//        AudioBufferList *inAudioBufferList = input->mutableAudioBufferList;
 
         /*
          Important:
@@ -116,16 +111,18 @@
          */
 
         // If passed null output buffer pointers, process in-place in the input buffer.
-        AudioBufferList *outAudioBufferList = outputData;
-        if (outAudioBufferList->mBuffers[0].mData == nullptr) {
-            for (UInt32 i = 0; i < outAudioBufferList->mNumberBuffers; ++i) {
-                outAudioBufferList->mBuffers[i].mData = inAudioBufferList->mBuffers[i].mData;
-            }
-        }
+//        AudioBufferList *outAudioBufferList = outputData;
+//        if (outAudioBufferList->mBuffers[0].mData == nullptr) {
+//            for (UInt32 i = 0; i < outAudioBufferList->mNumberBuffers; ++i) {
+//                outAudioBufferList->mBuffers[i].mData = inAudioBufferList->mBuffers[i].mData;
+//            }
+//        }
 
-        state->setBuffers(inAudioBufferList, outAudioBufferList);
-        state->processWithEvents(timestamp, frameCount, realtimeEventListHead, nil /* MIDIOutEventBlock */);
-
+        //state->setBuffers(inAudioBufferList, outAudioBufferList);
+        //state->processWithEvents(timestamp, frameCount, realtimeEventListHead, nil /* MIDIOutEventBlock */);
+        outputBusBuffer->prepareOutputBufferList(outputData, frameCount, true);
+        state->setBuffers(outputData);
+        state->processWithEvents(timestamp, frameCount, realtimeEventListHead, nil);
         return noErr;
     };
 }

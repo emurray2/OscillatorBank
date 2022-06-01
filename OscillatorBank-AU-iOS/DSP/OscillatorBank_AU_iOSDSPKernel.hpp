@@ -58,8 +58,7 @@ public:
         }
     }
 
-    void setBuffers(AudioBufferList* inBufferList, AudioBufferList* outBufferList) {
-        inBufferListPtr = inBufferList;
+    void setBuffers(AudioBufferList* outBufferList) {
         outBufferListPtr = outBufferList;
     }
 
@@ -73,15 +72,11 @@ public:
         if (bypassed) {
             // Pass the samples through
             for (int channel = 0; channel < chanCount; ++channel) {
-                if (inBufferListPtr->mBuffers[channel].mData ==  outBufferListPtr->mBuffers[channel].mData) {
-                    continue;
-                }
                 
                 for (int frameIndex = 0; frameIndex < frameCount; ++frameIndex) {
                     const int frameOffset = int(frameIndex + bufferOffset);
-                    const float* in  = (float*)inBufferListPtr->mBuffers[channel].mData  + frameOffset;
                     float* out = (float*)outBufferListPtr->mBuffers[channel].mData + frameOffset;
-                    *out = *in;
+                    *out = 0;
                 }
             }
             return;
@@ -129,7 +124,6 @@ private:
     float phaseIncrement = 0.0;
     std::vector<float> waveform;
     bool bypassed = false;
-    AudioBufferList* inBufferListPtr = nullptr;
     AudioBufferList* outBufferListPtr = nullptr;
 };
 
