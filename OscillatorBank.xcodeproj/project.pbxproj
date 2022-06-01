@@ -93,7 +93,6 @@
 		60148BFC2839376B00B21DBC /* OscillatorBank_AU_iOSDSPKernel.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = OscillatorBank_AU_iOSDSPKernel.hpp; sourceTree = "<group>"; };
 		60148BFE2839376B00B21DBC /* OscillatorBank_AU_iOSDSPKernel.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OscillatorBank_AU_iOSDSPKernel.mm; sourceTree = "<group>"; };
 		60148C012839376B00B21DBC /* AudioUnitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioUnitViewController.swift; sourceTree = "<group>"; };
-		60148C072839376B00B21DBC /* OscillatorBank_AU_iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OscillatorBank_AU_iOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		60148C092839376B00B21DBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		60148C0B2839376B00B21DBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -174,7 +173,6 @@
 		60148BEE2839376B00B21DBC /* OscillatorBank-AU-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				60148C072839376B00B21DBC /* OscillatorBank_AU_iOS-Bridging-Header.h */,
 				60148C082839376B00B21DBC /* MainInterface.storyboard */,
 				60148C0B2839376B00B21DBC /* Info.plist */,
 				60148BEF2839376B00B21DBC /* Audio Unit */,
@@ -690,7 +688,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "OscillatorBank-AU-iOS/OscillatorBank_AU_iOS-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -718,7 +716,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "OscillatorBank-AU-iOS/OscillatorBank_AU_iOS-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
