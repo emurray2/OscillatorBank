@@ -17,8 +17,6 @@
 		60148BFD2839376B00B21DBC /* OscillatorBank_AU_iOSDSPKernel.hpp in Resources */ = {isa = PBXBuildFile; fileRef = 60148BFC2839376B00B21DBC /* OscillatorBank_AU_iOSDSPKernel.hpp */; };
 		60148BFF2839376B00B21DBC /* OscillatorBank_AU_iOSDSPKernel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 60148BFE2839376B00B21DBC /* OscillatorBank_AU_iOSDSPKernel.mm */; };
 		60148C022839376B00B21DBC /* AudioUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60148C012839376B00B21DBC /* AudioUnitViewController.swift */; };
-		60148C042839376B00B21DBC /* OscillatorBank_AU_iOSAudioUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60148C032839376B00B21DBC /* OscillatorBank_AU_iOSAudioUnit.swift */; };
-		60148C062839376B00B21DBC /* OscillatorBank_AU_iOSParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60148C052839376B00B21DBC /* OscillatorBank_AU_iOSParameters.swift */; };
 		60148C0A2839376B00B21DBC /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60148C082839376B00B21DBC /* MainInterface.storyboard */; };
 		60148C0E2839376B00B21DBC /* OscillatorBank-AU-iOS.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 60148BED2839376B00B21DBC /* OscillatorBank-AU-iOS.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -62,8 +60,6 @@
 		60148BFC2839376B00B21DBC /* OscillatorBank_AU_iOSDSPKernel.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = OscillatorBank_AU_iOSDSPKernel.hpp; sourceTree = "<group>"; };
 		60148BFE2839376B00B21DBC /* OscillatorBank_AU_iOSDSPKernel.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OscillatorBank_AU_iOSDSPKernel.mm; sourceTree = "<group>"; };
 		60148C012839376B00B21DBC /* AudioUnitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioUnitViewController.swift; sourceTree = "<group>"; };
-		60148C032839376B00B21DBC /* OscillatorBank_AU_iOSAudioUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OscillatorBank_AU_iOSAudioUnit.swift; path = "Audio Unit/OscillatorBank_AU_iOSAudioUnit.swift"; sourceTree = "<group>"; };
-		60148C052839376B00B21DBC /* OscillatorBank_AU_iOSParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OscillatorBank_AU_iOSParameters.swift; path = "Audio Unit/OscillatorBank_AU_iOSParameters.swift"; sourceTree = "<group>"; };
 		60148C072839376B00B21DBC /* OscillatorBank_AU_iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OscillatorBank_AU_iOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		60148C092839376B00B21DBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		60148C0B2839376B00B21DBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -118,8 +114,6 @@
 		60148BEE2839376B00B21DBC /* OscillatorBank-AU-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				60148C032839376B00B21DBC /* OscillatorBank_AU_iOSAudioUnit.swift */,
-				60148C052839376B00B21DBC /* OscillatorBank_AU_iOSParameters.swift */,
 				60148C072839376B00B21DBC /* OscillatorBank_AU_iOS-Bridging-Header.h */,
 				60148C082839376B00B21DBC /* MainInterface.storyboard */,
 				60148C0B2839376B00B21DBC /* Info.plist */,
@@ -281,10 +275,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				60148BFF2839376B00B21DBC /* OscillatorBank_AU_iOSDSPKernel.mm in Sources */,
-				60148C062839376B00B21DBC /* OscillatorBank_AU_iOSParameters.swift in Sources */,
 				60148C022839376B00B21DBC /* AudioUnitViewController.swift in Sources */,
 				60148BF82839376B00B21DBC /* DSPKernel.mm in Sources */,
-				60148C042839376B00B21DBC /* OscillatorBank_AU_iOSAudioUnit.swift in Sources */,
 				60148BF22839376B00B21DBC /* OscillatorBank_AU_iOSAudioUnit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
