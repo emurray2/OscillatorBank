@@ -11,6 +11,7 @@
 class DSPKernel {
 public:
     virtual void process(AUAudioFrameCount frameCount, AUAudioFrameCount bufferOffset) = 0;
+    virtual void generateSignal(AUAudioFrameCount frameCount) = 0;
 
     // Override to handle MIDI events.
     virtual void handleMIDIEvent(AUMIDIEvent const& midiEvent) {}

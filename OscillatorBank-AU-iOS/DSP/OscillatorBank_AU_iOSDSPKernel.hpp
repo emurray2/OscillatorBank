@@ -80,22 +80,7 @@ public:
             }
             return;
         }
-
-        std::vector<float> oscillator;
-        oscillator.resize(frameCount);
-
-        for (int frameIndex = 0; frameIndex < frameCount; ++frameIndex) {
-            const int frameOffset = int(frameIndex + bufferOffset);
-            const int index = currentPhase / twoPi * waveform.size();
-            const float value = waveform[index] * amplitude;
-            currentPhase += phaseIncrement;
-            if (currentPhase >= twoPi)
-                currentPhase -= twoPi;
-            if (currentPhase < 0.0)
-                currentPhase += twoPi;
-            oscillator[frameOffset] = value;
-        }
-
+        generateSignal(frameCount);
         // Perform per sample dsp on the incoming float *in before assigning it to *out
         for (int channel = 0; channel < chanCount; ++channel) {
             // Get pointer to immutable input buffer and mutable output buffer
@@ -104,9 +89,26 @@ public:
             for (int frameIndex = 0; frameIndex < frameCount; ++frameIndex) {
                 const int frameOffset = int(frameIndex + bufferOffset);
                 // Do your sample by sample dsp here...
-                out[frameOffset] = oscillator[frameOffset];
+                out[frameOffset] = oscillator[frameIndex];
             }
         }
+    }
+
+    void generateSignal(AUAudioFrameCount frameCount) override {
+        oscillator.resize(frameCount);
+
+        for (int frameIndex = 0; frameIndex < frameCount; ++frameIndex) {
+            const int index = currentPhase / twoPi * waveform.size();
+            const float value = waveform[index] * amplitude;
+            currentPhase += phaseIncrement;
+            if (currentPhase >= twoPi)
+                currentPhase -= twoPi;
+            if (currentPhase < 0.0)
+                currentPhase += twoPi;
+            oscillator[frameIndex] = value;
+        }
+
+        return;
     }
 
     // MARK: Member Variables
@@ -120,6 +122,7 @@ private:
     float currentPhase = 0.0;
     float phaseIncrement = 0.0;
     std::vector<float> waveform;
+    std::vector<float> oscillator;
     bool bypassed = false;
     AudioBufferList* outBufferListPtr = nullptr;
 };
