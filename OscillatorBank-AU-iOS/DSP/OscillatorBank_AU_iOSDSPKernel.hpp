@@ -16,7 +16,7 @@ enum {
  */
 class OscillatorBank_AU_iOSDSPKernel : public DSPKernel {
 public:
-    
+
     // MARK: Member Functions
 
     OscillatorBank_AU_iOSDSPKernel() {}
@@ -29,8 +29,7 @@ public:
         setupWaveform();
     }
 
-    void reset() {
-    }
+    void reset() {}
 
     bool isBypassed() {
         return bypassed;
@@ -99,13 +98,11 @@ public:
 
         // Perform per sample dsp on the incoming float *in before assigning it to *out
         for (int channel = 0; channel < chanCount; ++channel) {
-        
             // Get pointer to immutable input buffer and mutable output buffer
             float* out = (float*)outBufferListPtr->mBuffers[channel].mData;
-            
+
             for (int frameIndex = 0; frameIndex < frameCount; ++frameIndex) {
                 const int frameOffset = int(frameIndex + bufferOffset);
-                
                 // Do your sample by sample dsp here...
                 out[frameOffset] = oscillator[frameOffset];
             }

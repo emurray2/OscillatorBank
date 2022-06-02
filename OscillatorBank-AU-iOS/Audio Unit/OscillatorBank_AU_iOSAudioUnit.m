@@ -1,7 +1,6 @@
 // Copyright AudioKit. All Rights Reserved. Revision History at http://github.com/AudioKit/AudioKit/
 
 #import "OscillatorBank_AU_iOSAudioUnit.h"
-
 #import <AVFoundation/AVFoundation.h>
 
 // Define parameter addresses.
@@ -13,13 +12,12 @@ const AudioUnitParameterID myParam1 = 0;
 @property AUAudioUnitBusArray *outputBusArray;
 @end
 
-
 @implementation OscillatorBank_AU_iOSAudioUnit
 @synthesize parameterTree = _parameterTree;
 
 - (instancetype)initWithComponentDescription:(AudioComponentDescription)componentDescription options:(AudioComponentInstantiationOptions)options error:(NSError **)outError {
     self = [super initWithComponentDescription:componentDescription options:options error:outError];
-    
+
     if (self == nil) { return nil; }
 
 	_kernelAdapter = [[OscillatorBank_AU_iOSDSPKernelAdapter alloc] init];
@@ -124,4 +122,3 @@ const AudioUnitParameterID myParam1 = 0;
 }
 
 @end
-

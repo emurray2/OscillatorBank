@@ -21,7 +21,6 @@
         _kernel.init(defaultFormat.channelCount, defaultFormat.sampleRate);
         _kernel.setParameter(paramOne, 0);
 
-        // Create the input and output busses.
         // Create the output bus.
         _outputBusBuffer.init(defaultFormat, 2);
         _outputBus = _outputBusBuffer.bus;
@@ -83,46 +82,10 @@
                               const AURenderEvent        				*realtimeEventListHead,
                               AURenderPullInputBlock __unsafe_unretained pullInputBlock) {
 
-//        AudioUnitRenderActionFlags pullFlags = 0;
-//
-//        if (frameCount > state->maximumFramesToRender()) {
-//            return kAudioUnitErr_TooManyFramesToProcess;
-//        }
-//
-//        AUAudioUnitStatus err = input->pullInput(&pullFlags, timestamp, frameCount, 0, pullInputBlock);
-//
-//        if (err != noErr) { return err; }
-//
-//        AudioBufferList *inAudioBufferList = input->mutableAudioBufferList;
-
-        /*
-         Important:
-         If the caller passed non-null output pointers (outputData->mBuffers[x].mData), use those.
-
-         If the caller passed null output buffer pointers, process in memory owned by the Audio Unit
-         and modify the (outputData->mBuffers[x].mData) pointers to point to this owned memory.
-         The Audio Unit is responsible for preserving the validity of this memory until the next call to render,
-         or deallocateRenderResources is called.
-
-         If your algorithm cannot process in-place, you will need to preallocate an output buffer
-         and use it here.
-
-         See the description of the canProcessInPlace property.
-         */
-
-        // If passed null output buffer pointers, process in-place in the input buffer.
-//        AudioBufferList *outAudioBufferList = outputData;
-//        if (outAudioBufferList->mBuffers[0].mData == nullptr) {
-//            for (UInt32 i = 0; i < outAudioBufferList->mNumberBuffers; ++i) {
-//                outAudioBufferList->mBuffers[i].mData = inAudioBufferList->mBuffers[i].mData;
-//            }
-//        }
-
-        //state->setBuffers(inAudioBufferList, outAudioBufferList);
-        //state->processWithEvents(timestamp, frameCount, realtimeEventListHead, nil /* MIDIOutEventBlock */);
         outputBusBuffer->prepareOutputBufferList(outputData, frameCount, true);
         state->setBuffers(outputData);
         state->processWithEvents(timestamp, frameCount, realtimeEventListHead, nil);
+
         return noErr;
     };
 }

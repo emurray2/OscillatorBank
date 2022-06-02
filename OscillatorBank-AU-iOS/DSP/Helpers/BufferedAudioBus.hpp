@@ -36,7 +36,7 @@ struct BufferedAudioBus {
         originalAudioBufferList = pcmBuffer.audioBufferList;
         mutableAudioBufferList = pcmBuffer.mutableAudioBufferList;
     }
-    
+
     void deallocateRenderResources() {
         pcmBuffer = nullptr;
         originalAudioBufferList = nullptr;
@@ -48,7 +48,7 @@ struct BufferedAudioBus {
 // MARK: prepareOutputBufferList()
 /*
  BufferedOutputBus
- 
+
  This class provides a prepareOutputBufferList method to copy the internal buffer pointers
  to the output buffer list in case the client passed in null buffer pointers.
  */
@@ -90,7 +90,7 @@ struct BufferedInputBus : BufferedAudioBus {
         if (pullInputBlock == nullptr) {
             return kAudioUnitErr_NoConnection;
         }
-        
+
         /*
          Important:
          The Audio Unit must supply valid buffers in (inputData->mBuffers[x].mData) and mDataByteSize.

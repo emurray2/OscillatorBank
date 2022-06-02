@@ -13,8 +13,8 @@
 		07D1A69E28481982000AFB39 /* OscillatorBank_AU_iOSDSPKernelAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 60148BFB2839376B00B21DBC /* OscillatorBank_AU_iOSDSPKernelAdapter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07D1A69F2848198C000AFB39 /* OscillatorBank_AU_iOSAudioUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = 60148BF02839376B00B21DBC /* OscillatorBank_AU_iOSAudioUnit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07D1A6A028481A8C000AFB39 /* OscillatorBank_AU_iOSDSPKernel.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 60148BFC2839376B00B21DBC /* OscillatorBank_AU_iOSDSPKernel.hpp */; };
-		07D1A6A128481A94000AFB39 /* BufferedAudioBus.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 60148BF92839376B00B21DBC /* BufferedAudioBus.hpp */; };
-		07D1A6A228481A9A000AFB39 /* DSPKernel.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 60148BF52839376B00B21DBC /* DSPKernel.hpp */; };
+		07D1A6A128481A94000AFB39 /* BufferedAudioBus.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 60148BF92839376B00B21DBC /* BufferedAudioBus.hpp */; settings = {ATTRIBUTES = (Private, ); }; };
+		07D1A6A228481A9A000AFB39 /* DSPKernel.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 60148BF52839376B00B21DBC /* DSPKernel.hpp */; settings = {ATTRIBUTES = (Private, ); }; };
 		07D1A6A328481AE6000AFB39 /* OscillatorBank_AU_iOSAudioUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 60148BF12839376B00B21DBC /* OscillatorBank_AU_iOSAudioUnit.m */; };
 		07D1A6A428481AEB000AFB39 /* OscillatorBank_AU_iOSDSPKernel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 60148BFE2839376B00B21DBC /* OscillatorBank_AU_iOSDSPKernel.mm */; };
 		07D1A6A528481AF0000AFB39 /* DSPKernel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 60148BF72839376B00B21DBC /* DSPKernel.mm */; };
@@ -228,8 +228,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				07D1A69528481919000AFB39 /* OscillatorBankFramework.h in Headers */,
-				07D1A69E28481982000AFB39 /* OscillatorBank_AU_iOSDSPKernelAdapter.h in Headers */,
 				07D1A69F2848198C000AFB39 /* OscillatorBank_AU_iOSAudioUnit.h in Headers */,
+				07D1A69E28481982000AFB39 /* OscillatorBank_AU_iOSDSPKernelAdapter.h in Headers */,
 				07D1A6A228481A9A000AFB39 /* DSPKernel.hpp in Headers */,
 				07D1A6A128481A94000AFB39 /* BufferedAudioBus.hpp in Headers */,
 				07D1A6A028481A8C000AFB39 /* OscillatorBank_AU_iOSDSPKernel.hpp in Headers */,

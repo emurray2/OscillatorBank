@@ -9,7 +9,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface OscillatorBank_AU_iOSDSPKernelAdapter : NSObject
 
 @property (nonatomic) AUAudioFrameCount maximumFramesToRender;
-@property (nonatomic, readonly) AUAudioUnitBus *inputBus;
 @property (nonatomic, readonly) AUAudioUnitBus *outputBus;
 
 - (void)setParameter:(AUParameter *)parameter value:(AUValue)value;
