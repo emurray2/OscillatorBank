@@ -1,12 +1,12 @@
 //
-//  Oscillator_Bank_AUDSPKernel.hpp
+//  OscillatorBankDSP.hpp
 //  Oscillator Bank AU
 //
 //  Created by Aura Audio on 6/6/22.
 //
 
-#ifndef Oscillator_Bank_AUDSPKernel_hpp
-#define Oscillator_Bank_AUDSPKernel_hpp
+#ifndef OscillatorBankDSP_hpp
+#define OscillatorBankDSP_hpp
 
 #import "DSPKernel.hpp"
 
@@ -19,12 +19,12 @@ enum {
  Performs simple copying of the input signal to the output.
  As a non-ObjC class, this is safe to use from render thread.
  */
-class Oscillator_Bank_AUDSPKernel : public DSPKernel {
+class OscillatorBankDSP : public DSPKernel {
 public:
     
     // MARK: Member Functions
 
-    Oscillator_Bank_AUDSPKernel() {}
+    OscillatorBankDSP() {}
 
     void init(int channelCount, double inSampleRate) {
         chanCount = channelCount;
@@ -109,4 +109,4 @@ private:
     AudioBufferList* outBufferListPtr = nullptr;
 };
 
-#endif /* Oscillator_Bank_AUDSPKernel_hpp */
+#endif /* OscillatorBankDSP_hpp */

@@ -7,26 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		60365E75284E2B720025DB2A /* Oscillator_BankApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60365E74284E2B720025DB2A /* Oscillator_BankApp.swift */; };
+		60365E75284E2B720025DB2A /* OscillatorBankApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60365E74284E2B720025DB2A /* OscillatorBankApp.swift */; };
 		60365E77284E2B720025DB2A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60365E76284E2B720025DB2A /* ContentView.swift */; };
 		60365E79284E2B730025DB2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60365E78284E2B730025DB2A /* Assets.xcassets */; };
 		60365E7C284E2B730025DB2A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60365E7B284E2B730025DB2A /* Preview Assets.xcassets */; };
-		60365E89284E2BCA0025DB2A /* Oscillator_Bank_AUAudioUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 60365E88284E2BCA0025DB2A /* Oscillator_Bank_AUAudioUnit.m */; };
 		60365E8D284E2BCA0025DB2A /* DSPKernel.hpp in Resources */ = {isa = PBXBuildFile; fileRef = 60365E8C284E2BCA0025DB2A /* DSPKernel.hpp */; };
 		60365E8F284E2BCA0025DB2A /* DSPKernel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 60365E8E284E2BCA0025DB2A /* DSPKernel.mm */; };
 		60365E91284E2BCA0025DB2A /* BufferedAudioBus.hpp in Resources */ = {isa = PBXBuildFile; fileRef = 60365E90284E2BCA0025DB2A /* BufferedAudioBus.hpp */; };
-		60365E94284E2BCA0025DB2A /* Oscillator_Bank_AUDSPKernel.hpp in Resources */ = {isa = PBXBuildFile; fileRef = 60365E93284E2BCA0025DB2A /* Oscillator_Bank_AUDSPKernel.hpp */; };
-		60365E96284E2BCA0025DB2A /* Oscillator_Bank_AUDSPKernel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 60365E95284E2BCA0025DB2A /* Oscillator_Bank_AUDSPKernel.mm */; };
+		60365E94284E2BCA0025DB2A /* OscillatorBankDSP.hpp in Resources */ = {isa = PBXBuildFile; fileRef = 60365E93284E2BCA0025DB2A /* OscillatorBankDSP.hpp */; };
+		60365E96284E2BCA0025DB2A /* OscillatorBankDSP.mm in Sources */ = {isa = PBXBuildFile; fileRef = 60365E95284E2BCA0025DB2A /* OscillatorBankDSP.mm */; };
 		60365E99284E2BCA0025DB2A /* AudioUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60365E98284E2BCA0025DB2A /* AudioUnitViewController.swift */; };
-		60365E9B284E2BCA0025DB2A /* Oscillator_Bank_AUAudioUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60365E9A284E2BCA0025DB2A /* Oscillator_Bank_AUAudioUnit.swift */; };
-		60365E9D284E2BCA0025DB2A /* Oscillator_Bank_AUParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60365E9C284E2BCA0025DB2A /* Oscillator_Bank_AUParameters.swift */; };
-		60365EA1284E2BCA0025DB2A /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60365E9F284E2BCA0025DB2A /* MainInterface.storyboard */; };
-		60365EA5284E2BCA0025DB2A /* Oscillator Bank AU.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 60365E84284E2BCA0025DB2A /* Oscillator Bank AU.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		60365EAC284E2C510025DB2A /* AudioKitEX in Frameworks */ = {isa = PBXBuildFile; productRef = 60365EAB284E2C510025DB2A /* AudioKitEX */; };
+		60365EB1284E30FC0025DB2A /* OscillatorBankAU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60365EB0284E30FC0025DB2A /* OscillatorBankAU.swift */; };
+		60365EB2284E31F60025DB2A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60365E76284E2B720025DB2A /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		60365EA3284E2BCA0025DB2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 60148B812839369400B21DBC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 60365E83284E2BCA0025DB2A;
+			remoteInfo = "Oscillator Bank AU";
+		};
+		60365EB7284E37AE0025DB2A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 60148B812839369400B21DBC /* Project object */;
 			proxyType = 1;
@@ -42,7 +46,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				60365EA5284E2BCA0025DB2A /* Oscillator Bank AU.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -50,28 +53,24 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		60365E72284E2B720025DB2A /* Oscillator Bank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Oscillator Bank.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		60365E74284E2B720025DB2A /* Oscillator_BankApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oscillator_BankApp.swift; sourceTree = "<group>"; };
+		60365E74284E2B720025DB2A /* OscillatorBankApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OscillatorBankApp.swift; sourceTree = "<group>"; };
 		60365E76284E2B720025DB2A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		60365E78284E2B730025DB2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		60365E7B284E2B730025DB2A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		60365E84284E2BCA0025DB2A /* Oscillator Bank AU.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Oscillator Bank AU.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		60365E87284E2BCA0025DB2A /* Oscillator_Bank_AUAudioUnit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Oscillator_Bank_AUAudioUnit.h; sourceTree = "<group>"; };
-		60365E88284E2BCA0025DB2A /* Oscillator_Bank_AUAudioUnit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Oscillator_Bank_AUAudioUnit.m; sourceTree = "<group>"; };
 		60365E8C284E2BCA0025DB2A /* DSPKernel.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DSPKernel.hpp; sourceTree = "<group>"; };
 		60365E8E284E2BCA0025DB2A /* DSPKernel.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = DSPKernel.mm; sourceTree = "<group>"; };
 		60365E90284E2BCA0025DB2A /* BufferedAudioBus.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BufferedAudioBus.hpp; sourceTree = "<group>"; };
-		60365E92284E2BCA0025DB2A /* Oscillator_Bank_AUDSPKernelAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Oscillator_Bank_AUDSPKernelAdapter.h; sourceTree = "<group>"; };
-		60365E93284E2BCA0025DB2A /* Oscillator_Bank_AUDSPKernel.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Oscillator_Bank_AUDSPKernel.hpp; sourceTree = "<group>"; };
-		60365E95284E2BCA0025DB2A /* Oscillator_Bank_AUDSPKernel.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Oscillator_Bank_AUDSPKernel.mm; sourceTree = "<group>"; };
+		60365E92284E2BCA0025DB2A /* DSPKernelAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSPKernelAdapter.h; sourceTree = "<group>"; };
+		60365E93284E2BCA0025DB2A /* OscillatorBankDSP.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = OscillatorBankDSP.hpp; sourceTree = "<group>"; };
+		60365E95284E2BCA0025DB2A /* OscillatorBankDSP.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OscillatorBankDSP.mm; sourceTree = "<group>"; };
 		60365E98284E2BCA0025DB2A /* AudioUnitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioUnitViewController.swift; sourceTree = "<group>"; };
-		60365E9A284E2BCA0025DB2A /* Oscillator_Bank_AUAudioUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Oscillator_Bank_AUAudioUnit.swift; path = "Audio Unit/Oscillator_Bank_AUAudioUnit.swift"; sourceTree = "<group>"; };
-		60365E9C284E2BCA0025DB2A /* Oscillator_Bank_AUParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Oscillator_Bank_AUParameters.swift; path = "Audio Unit/Oscillator_Bank_AUParameters.swift"; sourceTree = "<group>"; };
-		60365E9E284E2BCA0025DB2A /* Oscillator_Bank_AU-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Oscillator_Bank_AU-Bridging-Header.h"; sourceTree = "<group>"; };
-		60365EA0284E2BCA0025DB2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		60365E9E284E2BCA0025DB2A /* DSPBridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSPBridgingHeader.h; sourceTree = "<group>"; };
 		60365EA2284E2BCA0025DB2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60365EAD284E2CCE0025DB2A /* Oscillator Bank.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Oscillator Bank.entitlements"; sourceTree = "<group>"; };
 		60365EAE284E2CCE0025DB2A /* Oscillator Bank AU.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Oscillator Bank AU.entitlements"; sourceTree = "<group>"; };
+		60365EB0284E30FC0025DB2A /* OscillatorBankAU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OscillatorBankAU.swift; sourceTree = "<group>"; };
+		60365EB3284E34650025DB2A /* Oscillator Bank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Oscillator Bank.app"; path = "/Users/auraaudio/Documents/GitHub/OscillatorBank/build/Debug-iphoneos/Oscillator Bank.app"; sourceTree = "<absolute>"; };
+		60365EB4284E34AE0025DB2A /* Oscillator Bank AU.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; name = "Oscillator Bank AU.appex"; path = "/Users/auraaudio/Documents/GitHub/OscillatorBank/build/Debug-iphoneos/Oscillator Bank AU.appex"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,24 +95,21 @@
 		60148B802839369400B21DBC = {
 			isa = PBXGroup;
 			children = (
-				60365E72284E2B720025DB2A /* Oscillator Bank.app */,
-				60365E73284E2B720025DB2A /* Oscillator Bank */,
-				60365E84284E2BCA0025DB2A /* Oscillator Bank AU.appex */,
-				60365E85284E2BCA0025DB2A /* Oscillator Bank AU */,
-				60365EAA284E2C510025DB2A /* Frameworks */,
+				60365E73284E2B720025DB2A /* App */,
+				60365E85284E2BCA0025DB2A /* Audio Unit */,
 			);
 			sourceTree = "<group>";
 		};
-		60365E73284E2B720025DB2A /* Oscillator Bank */ = {
+		60365E73284E2B720025DB2A /* App */ = {
 			isa = PBXGroup;
 			children = (
 				60365EAD284E2CCE0025DB2A /* Oscillator Bank.entitlements */,
-				60365E74284E2B720025DB2A /* Oscillator_BankApp.swift */,
+				60365E74284E2B720025DB2A /* OscillatorBankApp.swift */,
 				60365E76284E2B720025DB2A /* ContentView.swift */,
 				60365E78284E2B730025DB2A /* Assets.xcassets */,
 				60365E7A284E2B730025DB2A /* Preview Content */,
 			);
-			path = "Oscillator Bank";
+			path = App;
 			sourceTree = "<group>";
 		};
 		60365E7A284E2B730025DB2A /* Preview Content */ = {
@@ -124,27 +120,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		60365E85284E2BCA0025DB2A /* Oscillator Bank AU */ = {
+		60365E85284E2BCA0025DB2A /* Audio Unit */ = {
 			isa = PBXGroup;
 			children = (
 				60365EAE284E2CCE0025DB2A /* Oscillator Bank AU.entitlements */,
-				60365E9A284E2BCA0025DB2A /* Oscillator_Bank_AUAudioUnit.swift */,
-				60365E9C284E2BCA0025DB2A /* Oscillator_Bank_AUParameters.swift */,
-				60365E9E284E2BCA0025DB2A /* Oscillator_Bank_AU-Bridging-Header.h */,
-				60365E9F284E2BCA0025DB2A /* MainInterface.storyboard */,
+				60365E98284E2BCA0025DB2A /* AudioUnitViewController.swift */,
+				60365EB0284E30FC0025DB2A /* OscillatorBankAU.swift */,
 				60365EA2284E2BCA0025DB2A /* Info.plist */,
-				60365E86284E2BCA0025DB2A /* Audio Unit */,
 				60365E8A284E2BCA0025DB2A /* DSP */,
-				60365E97284E2BCA0025DB2A /* UI */,
-			);
-			path = "Oscillator Bank AU";
-			sourceTree = "<group>";
-		};
-		60365E86284E2BCA0025DB2A /* Audio Unit */ = {
-			isa = PBXGroup;
-			children = (
-				60365E87284E2BCA0025DB2A /* Oscillator_Bank_AUAudioUnit.h */,
-				60365E88284E2BCA0025DB2A /* Oscillator_Bank_AUAudioUnit.m */,
 			);
 			path = "Audio Unit";
 			sourceTree = "<group>";
@@ -152,37 +135,15 @@
 		60365E8A284E2BCA0025DB2A /* DSP */ = {
 			isa = PBXGroup;
 			children = (
-				60365E93284E2BCA0025DB2A /* Oscillator_Bank_AUDSPKernel.hpp */,
-				60365E95284E2BCA0025DB2A /* Oscillator_Bank_AUDSPKernel.mm */,
-				60365E8B284E2BCA0025DB2A /* Helpers */,
-			);
-			path = DSP;
-			sourceTree = "<group>";
-		};
-		60365E8B284E2BCA0025DB2A /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
+				60365E9E284E2BCA0025DB2A /* DSPBridgingHeader.h */,
+				60365E93284E2BCA0025DB2A /* OscillatorBankDSP.hpp */,
+				60365E95284E2BCA0025DB2A /* OscillatorBankDSP.mm */,
+				60365E92284E2BCA0025DB2A /* DSPKernelAdapter.h */,
 				60365E8C284E2BCA0025DB2A /* DSPKernel.hpp */,
 				60365E8E284E2BCA0025DB2A /* DSPKernel.mm */,
 				60365E90284E2BCA0025DB2A /* BufferedAudioBus.hpp */,
-				60365E92284E2BCA0025DB2A /* Oscillator_Bank_AUDSPKernelAdapter.h */,
 			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		60365E97284E2BCA0025DB2A /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				60365E98284E2BCA0025DB2A /* AudioUnitViewController.swift */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
-		60365EAA284E2C510025DB2A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
+			path = DSP;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,10 +162,11 @@
 			);
 			dependencies = (
 				60365EA4284E2BCA0025DB2A /* PBXTargetDependency */,
+				60365EB8284E37AE0025DB2A /* PBXTargetDependency */,
 			);
 			name = "Oscillator Bank";
 			productName = "Oscillator Bank";
-			productReference = 60365E72284E2B720025DB2A /* Oscillator Bank.app */;
+			productReference = 60365EB3284E34650025DB2A /* Oscillator Bank.app */;
 			productType = "com.apple.product-type.application";
 		};
 		60365E83284E2BCA0025DB2A /* Oscillator Bank AU */ = {
@@ -224,7 +186,7 @@
 				60365EAB284E2C510025DB2A /* AudioKitEX */,
 			);
 			productName = "Oscillator Bank AU";
-			productReference = 60365E84284E2BCA0025DB2A /* Oscillator Bank AU.appex */;
+			productReference = 60365EB4284E34AE0025DB2A /* Oscillator Bank AU.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -282,8 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60365E8D284E2BCA0025DB2A /* DSPKernel.hpp in Resources */,
-				60365EA1284E2BCA0025DB2A /* MainInterface.storyboard in Resources */,
-				60365E94284E2BCA0025DB2A /* Oscillator_Bank_AUDSPKernel.hpp in Resources */,
+				60365E94284E2BCA0025DB2A /* OscillatorBankDSP.hpp in Resources */,
 				60365E91284E2BCA0025DB2A /* BufferedAudioBus.hpp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,7 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60365E77284E2B720025DB2A /* ContentView.swift in Sources */,
-				60365E75284E2B720025DB2A /* Oscillator_BankApp.swift in Sources */,
+				60365E75284E2B720025DB2A /* OscillatorBankApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,11 +266,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				60365E8F284E2BCA0025DB2A /* DSPKernel.mm in Sources */,
-				60365E9D284E2BCA0025DB2A /* Oscillator_Bank_AUParameters.swift in Sources */,
+				60365EB2284E31F60025DB2A /* ContentView.swift in Sources */,
+				60365EB1284E30FC0025DB2A /* OscillatorBankAU.swift in Sources */,
 				60365E99284E2BCA0025DB2A /* AudioUnitViewController.swift in Sources */,
-				60365E9B284E2BCA0025DB2A /* Oscillator_Bank_AUAudioUnit.swift in Sources */,
-				60365E96284E2BCA0025DB2A /* Oscillator_Bank_AUDSPKernel.mm in Sources */,
-				60365E89284E2BCA0025DB2A /* Oscillator_Bank_AUAudioUnit.m in Sources */,
+				60365E96284E2BCA0025DB2A /* OscillatorBankDSP.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,18 +281,12 @@
 			target = 60365E83284E2BCA0025DB2A /* Oscillator Bank AU */;
 			targetProxy = 60365EA3284E2BCA0025DB2A /* PBXContainerItemProxy */;
 		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		60365E9F284E2BCA0025DB2A /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				60365EA0284E2BCA0025DB2A /* Base */,
-			);
-			name = MainInterface.storyboard;
-			sourceTree = "<group>";
+		60365EB8284E37AE0025DB2A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 60365E83284E2BCA0025DB2A /* Oscillator Bank AU */;
+			targetProxy = 60365EB7284E37AE0025DB2A /* PBXContainerItemProxy */;
 		};
-/* End PBXVariantGroup section */
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		60148BB42839369500B21DBC /* Debug */ = {
@@ -450,13 +404,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Oscillator Bank/Oscillator Bank.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "App/Oscillator Bank.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Oscillator Bank/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"App/Preview Content\"";
 				DEVELOPMENT_TEAM = 6CV59M265C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -484,13 +439,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Oscillator Bank/Oscillator Bank.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "App/Oscillator Bank.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Oscillator Bank/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"App/Preview Content\"";
 				DEVELOPMENT_TEAM = 6CV59M265C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -516,12 +472,12 @@
 		60365EA7284E2BCA0025DB2A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "Oscillator Bank AU/Oscillator Bank AU.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Audio Unit/Oscillator Bank AU.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6CV59M265C;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Oscillator Bank AU/Info.plist";
+				INFOPLIST_FILE = "Audio Unit/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Oscillator Bank";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -537,7 +493,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Oscillator Bank AU/Oscillator_Bank_AU-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Audio Unit/DSP/DSPBridgingHeader.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -546,12 +502,12 @@
 		60365EA8284E2BCA0025DB2A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "Oscillator Bank AU/Oscillator Bank AU.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Audio Unit/Oscillator Bank AU.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6CV59M265C;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Oscillator Bank AU/Info.plist";
+				INFOPLIST_FILE = "Audio Unit/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Oscillator Bank";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -567,7 +523,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Oscillator Bank AU/Oscillator_Bank_AU-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Audio Unit/DSP/DSPBridgingHeader.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

@@ -1,5 +1,5 @@
 //
-//  Oscillator_Bank_AUDSPKernelAdapter.h
+//  DSPKernelAdapter.h
 //  Oscillator Bank AU
 //
 //  Created by Aura Audio on 6/6/22.
@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Oscillator_Bank_AUDSPKernelAdapter : NSObject
+@interface DSPKernelAdapter : NSObject
 
 @property (nonatomic) AUAudioFrameCount maximumFramesToRender;
 @property (nonatomic, readonly) AUAudioUnitBus *inputBus;

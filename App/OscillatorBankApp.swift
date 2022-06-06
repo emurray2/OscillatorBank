@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct Oscillator_BankApp: App {
+struct OscillatorBankApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

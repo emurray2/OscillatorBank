@@ -1,5 +1,5 @@
 //
-//  Oscillator_Bank_AUDSPKernel.mm
+//  OscillatorBankDSP.mm
 //  Oscillator Bank AU
 //
 //  Created by Aura Audio on 6/6/22.
@@ -9,12 +9,12 @@
 #import <CoreAudioKit/AUViewController.h>
 #import "DSPKernel.hpp"
 #import "BufferedAudioBus.hpp"
-#import "Oscillator_Bank_AUDSPKernel.hpp"
-#import "Oscillator_Bank_AUDSPKernelAdapter.h"
+#import "OscillatorBankDSP.hpp"
+#import "DSPKernelAdapter.h"
 
-@implementation Oscillator_Bank_AUDSPKernelAdapter {
+@implementation DSPKernelAdapter {
     // C++ members need to be ivars; they would be copied on access if they were properties.
-    Oscillator_Bank_AUDSPKernel  _kernel;
+    OscillatorBankDSP  _kernel;
     BufferedInputBus _inputBus;
 }
 
@@ -82,7 +82,7 @@
      render, we're doing it wrong.
      */
     // Specify captured objects are mutable.
-    __block Oscillator_Bank_AUDSPKernel *state = &_kernel;
+    __block OscillatorBankDSP *state = &_kernel;
     __block BufferedInputBus *input = &_inputBus;
 
     return ^AUAudioUnitStatus(AudioUnitRenderActionFlags 				*actionFlags,

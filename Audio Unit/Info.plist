@@ -14,13 +14,13 @@
 					<key>factoryFunction</key>
 					<string>$(PRODUCT_MODULE_NAME).AudioUnitViewController</string>
 					<key>manufacturer</key>
-					<string>osbk</string>
+					<string>AuKt</string>
 					<key>name</key>
-					<string>osbk: Oscillator Bank AU</string>
+					<string>AudioKit: Oscillator Bank</string>
 					<key>sandboxSafe</key>
 					<true/>
 					<key>subtype</key>
-					<string>AuKt</string>
+					<string>osbk</string>
 					<key>tags</key>
 					<array>
 						<string>Synthesizer</string>
@@ -32,10 +32,10 @@
 				</dict>
 			</array>
 		</dict>
-		<key>NSExtensionMainStoryboard</key>
-		<string>MainInterface</string>
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.AudioUnit-UI</string>
+		<key>NSExtensionPrincipalClass</key>
+		<string>$(PRODUCT_MODULE_NAME).AudioUnitViewController</string>
 	</dict>
 </dict>
 </plist>
