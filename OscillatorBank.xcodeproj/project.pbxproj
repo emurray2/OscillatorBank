@@ -25,6 +25,7 @@
 		60148C022839376B00B21DBC /* AudioUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60148C012839376B00B21DBC /* AudioUnitViewController.swift */; };
 		60148C0A2839376B00B21DBC /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60148C082839376B00B21DBC /* MainInterface.storyboard */; };
 		60148C0E2839376B00B21DBC /* OscillatorBank-AU-iOS.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 60148BED2839376B00B21DBC /* OscillatorBank-AU-iOS.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		60365E6D284E29F80025DB2A /* AudioKitEX in Frameworks */ = {isa = PBXBuildFile; productRef = 60365E6C284E29F80025DB2A /* AudioKitEX */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07D1A69828481919000AFB39 /* OscillatorBankFramework.framework in Frameworks */,
+				60365E6D284E29F80025DB2A /* AudioKitEX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +276,9 @@
 				07D1A69728481919000AFB39 /* PBXTargetDependency */,
 			);
 			name = "OscillatorBank (iOS)";
+			packageProductDependencies = (
+				60365E6C284E29F80025DB2A /* AudioKitEX */,
+			);
 			productName = "OscillatorBank (iOS)";
 			productReference = 60148B8D2839369500B21DBC /* Oscillator Bank.app */;
 			productType = "com.apple.product-type.application";
@@ -326,6 +331,9 @@
 				Base,
 			);
 			mainGroup = 60148B802839369400B21DBC;
+			packageReferences = (
+				60365E6B284E29F80025DB2A /* XCRemoteSwiftPackageReference "AudioKitEX" */,
+			);
 			productRefGroup = 60148B8E2839369500B21DBC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -763,6 +771,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		60365E6B284E29F80025DB2A /* XCRemoteSwiftPackageReference "AudioKitEX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/AudioKitEX";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		60365E6C284E29F80025DB2A /* AudioKitEX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 60365E6B284E29F80025DB2A /* XCRemoteSwiftPackageReference "AudioKitEX" */;
+			productName = AudioKitEX;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 60148B812839369400B21DBC /* Project object */;
 }
