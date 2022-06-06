@@ -69,8 +69,8 @@
 		60365EAD284E2CCE0025DB2A /* Oscillator Bank.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Oscillator Bank.entitlements"; sourceTree = "<group>"; };
 		60365EAE284E2CCE0025DB2A /* Oscillator Bank AU.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Oscillator Bank AU.entitlements"; sourceTree = "<group>"; };
 		60365EB0284E30FC0025DB2A /* OscillatorBankAU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OscillatorBankAU.swift; sourceTree = "<group>"; };
-		60365EB3284E34650025DB2A /* Oscillator Bank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Oscillator Bank.app"; path = "/Users/auraaudio/Documents/GitHub/OscillatorBank/build/Debug-iphoneos/Oscillator Bank.app"; sourceTree = "<absolute>"; };
-		60365EB4284E34AE0025DB2A /* Oscillator Bank AU.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; name = "Oscillator Bank AU.appex"; path = "/Users/auraaudio/Documents/GitHub/OscillatorBank/build/Debug-iphoneos/Oscillator Bank AU.appex"; sourceTree = "<absolute>"; };
+		60365EB9284E3A9D0025DB2A /* Oscillator Bank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Oscillator Bank.app"; path = "/Users/auraaudio/Documents/GitHub/OscillatorBank/build/Debug-iphoneos/Oscillator Bank.app"; sourceTree = "<absolute>"; };
+		60365EBA284E3A9D0025DB2A /* Oscillator Bank AU.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; name = "Oscillator Bank AU.appex"; path = "/Users/auraaudio/Documents/GitHub/OscillatorBank/build/Debug-iphoneos/Oscillator Bank AU.appex"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,7 +166,7 @@
 			);
 			name = "Oscillator Bank";
 			productName = "Oscillator Bank";
-			productReference = 60365EB3284E34650025DB2A /* Oscillator Bank.app */;
+			productReference = 60365EB9284E3A9D0025DB2A /* Oscillator Bank.app */;
 			productType = "com.apple.product-type.application";
 		};
 		60365E83284E2BCA0025DB2A /* Oscillator Bank AU */ = {
@@ -186,7 +186,7 @@
 				60365EAB284E2C510025DB2A /* AudioKitEX */,
 			);
 			productName = "Oscillator Bank AU";
-			productReference = 60365EB4284E34AE0025DB2A /* Oscillator Bank AU.appex */;
+			productReference = 60365EBA284E3A9D0025DB2A /* Oscillator Bank AU.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
