@@ -6,6 +6,7 @@
 //
 
 import CoreAudioKit
+import AudioKit
 import SwiftUI
 
 public class AudioUnitViewController: AUViewController, AUAudioUnitFactory {
@@ -35,9 +36,9 @@ public class AudioUnitViewController: AUViewController, AUAudioUnitFactory {
     }
     
     public func createAudioUnit(with componentDescription: AudioComponentDescription) throws -> AUAudioUnit {
-        audioUnit = try OscillatorBankAU(componentDescription: componentDescription, options: [])
+        let audioUnit = OscillatorBank(Mixer()).avAudioNode.auAudioUnit
         
-        return audioUnit!
+        return audioUnit
     }
     
 }
