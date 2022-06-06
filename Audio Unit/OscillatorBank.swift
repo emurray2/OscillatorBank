@@ -39,12 +39,12 @@ public class OscillatorBank: Node {
         range: 0...100,
         unit: .generic)
 
-    /// Left Channel Amplification Factor
+    /// Arbitrary test parameter
     @Parameter(paramOneDef) public var paramOne: AUValue
 
     // MARK: - Initialization
 
-    /// Initialize this fader node
+    /// Initialize this oscillator bank node
     ///
     /// - Parameters:
     ///   - paramOne: An arbitrary test parameter
